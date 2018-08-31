@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    self.title = @"3132助手";
     
     [self creatMainBtn];
 }
@@ -33,7 +33,6 @@
         [btn setTitle:titiles[i] forState:UIControlStateNormal];
         [self.view addSubview:btn];
     }
-    
 }
 
 - (void)btnClick:(UIButton *)btn{
