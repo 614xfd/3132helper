@@ -15,6 +15,10 @@
 		04B805182138CEBE003465E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805172138CEBE003465E0 /* main.m */; };
 		04B805222138CEBE003465E0 /* _132helperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805212138CEBE003465E0 /* _132helperTests.m */; };
 		04B8052D2138CEBE003465E0 /* _132helperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8052C2138CEBE003465E0 /* _132helperUITests.m */; };
+		04B8053C2138D437003465E0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8053B2138D437003465E0 /* FirstViewController.m */; };
+		04B8053F2138D453003465E0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8053E2138D453003465E0 /* SecondViewController.m */; };
+		04B805422138D47A003465E0 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805412138D47A003465E0 /* ThirdViewController.m */; };
+		04B805452138D490003465E0 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805442138D490003465E0 /* FourthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		04B805282138CEBE003465E0 /* 3132helperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3132helperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B8052C2138CEBE003465E0 /* _132helperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _132helperUITests.m; sourceTree = "<group>"; };
 		04B8052E2138CEBE003465E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B8053A2138D437003465E0 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		04B8053B2138D437003465E0 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		04B8053D2138D453003465E0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		04B8053E2138D453003465E0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		04B805402138D47A003465E0 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		04B805412138D47A003465E0 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		04B805432138D490003465E0 /* FourthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		04B805442138D490003465E0 /* FourthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,14 @@
 				04B805092138CEBC003465E0 /* AppDelegate.m */,
 				04B8050B2138CEBC003465E0 /* ViewController.h */,
 				04B8050C2138CEBC003465E0 /* ViewController.m */,
+				04B8053A2138D437003465E0 /* FirstViewController.h */,
+				04B8053B2138D437003465E0 /* FirstViewController.m */,
+				04B8053D2138D453003465E0 /* SecondViewController.h */,
+				04B8053E2138D453003465E0 /* SecondViewController.m */,
+				04B805402138D47A003465E0 /* ThirdViewController.h */,
+				04B805412138D47A003465E0 /* ThirdViewController.m */,
+				04B805432138D490003465E0 /* FourthViewController.h */,
+				04B805442138D490003465E0 /* FourthViewController.m */,
 				04B8050E2138CEBC003465E0 /* Main.storyboard */,
 				04B805112138CEBE003465E0 /* Assets.xcassets */,
 				04B805132138CEBE003465E0 /* LaunchScreen.storyboard */,
@@ -262,9 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B8053F2138D453003465E0 /* SecondViewController.m in Sources */,
 				04B8050D2138CEBC003465E0 /* ViewController.m in Sources */,
+				04B805422138D47A003465E0 /* ThirdViewController.m in Sources */,
 				04B805182138CEBE003465E0 /* main.m in Sources */,
 				04B8050A2138CEBC003465E0 /* AppDelegate.m in Sources */,
+				04B805452138D490003465E0 /* FourthViewController.m in Sources */,
+				04B8053C2138D437003465E0 /* FirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
