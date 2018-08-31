@@ -19,6 +19,15 @@
 		04B8053F2138D453003465E0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8053E2138D453003465E0 /* SecondViewController.m */; };
 		04B805422138D47A003465E0 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805412138D47A003465E0 /* ThirdViewController.m */; };
 		04B805452138D490003465E0 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805442138D490003465E0 /* FourthViewController.m */; };
+		04B8055C2138DD45003465E0 /* NSObject+TDAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805482138DD45003465E0 /* NSObject+TDAttribute.m */; };
+		04B8055D2138DD45003465E0 /* TDOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8054A2138DD45003465E0 /* TDOperator.m */; };
+		04B8055E2138DD45003465E0 /* NSObject＋TDKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8054B2138DD45003465E0 /* NSObject＋TDKeyValue.m */; };
+		04B8055F2138DD45003465E0 /* TDPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8054F2138DD45003465E0 /* TDPerformer.m */; };
+		04B805602138DD45003465E0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805532138DD45003465E0 /* FMDatabaseQueue.m */; };
+		04B805612138DD45003465E0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805562138DD45003465E0 /* FMDatabaseAdditions.m */; };
+		04B805622138DD45003465E0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805572138DD45003465E0 /* FMDatabase.m */; };
+		04B805632138DD45003465E0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8055A2138DD45003465E0 /* FMDatabasePool.m */; };
+		04B805642138DD45003465E0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8055B2138DD45003465E0 /* FMResultSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +72,26 @@
 		04B805412138D47A003465E0 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		04B805432138D490003465E0 /* FourthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		04B805442138D490003465E0 /* FourthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		04B805482138DD45003465E0 /* NSObject+TDAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TDAttribute.m"; sourceTree = "<group>"; };
+		04B805492138DD45003465E0 /* TDPerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPerformer.h; sourceTree = "<group>"; };
+		04B8054A2138DD45003465E0 /* TDOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOperator.m; sourceTree = "<group>"; };
+		04B8054B2138DD45003465E0 /* NSObject＋TDKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject＋TDKeyValue.m"; sourceTree = "<group>"; };
+		04B8054C2138DD45003465E0 /* NSObject+TDAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TDAttribute.h"; sourceTree = "<group>"; };
+		04B8054D2138DD45003465E0 /* NSObject＋TDKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject＋TDKeyValue.h"; sourceTree = "<group>"; };
+		04B8054E2138DD45003465E0 /* TDOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOperator.h; sourceTree = "<group>"; };
+		04B8054F2138DD45003465E0 /* TDPerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPerformer.m; sourceTree = "<group>"; };
+		04B805502138DD45003465E0 /* TDCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDCache.h; sourceTree = "<group>"; };
+		04B805522138DD45003465E0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		04B805532138DD45003465E0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		04B805542138DD45003465E0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		04B805552138DD45003465E0 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		04B805562138DD45003465E0 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		04B805572138DD45003465E0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		04B805582138DD45003465E0 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		04B805592138DD45003465E0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		04B8055A2138DD45003465E0 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		04B8055B2138DD45003465E0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		04B805652138DD89003465E0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +142,7 @@
 		04B805072138CEBC003465E0 /* 3132helper */ = {
 			isa = PBXGroup;
 			children = (
+				04B805462138DD45003465E0 /* TDCache */,
 				04B805082138CEBC003465E0 /* AppDelegate.h */,
 				04B805092138CEBC003465E0 /* AppDelegate.m */,
 				04B8050B2138CEBC003465E0 /* ViewController.h */,
@@ -130,6 +160,7 @@
 				04B805132138CEBE003465E0 /* LaunchScreen.storyboard */,
 				04B805162138CEBE003465E0 /* Info.plist */,
 				04B805172138CEBE003465E0 /* main.m */,
+				04B805652138DD89003465E0 /* PrefixHeader.pch */,
 			);
 			path = 3132helper;
 			sourceTree = "<group>";
@@ -150,6 +181,48 @@
 				04B8052E2138CEBE003465E0 /* Info.plist */,
 			);
 			path = 3132helperUITests;
+			sourceTree = "<group>";
+		};
+		04B805462138DD45003465E0 /* TDCache */ = {
+			isa = PBXGroup;
+			children = (
+				04B805472138DD45003465E0 /* TDCacheObject */,
+				04B805502138DD45003465E0 /* TDCache.h */,
+				04B805512138DD45003465E0 /* FMDB */,
+			);
+			path = TDCache;
+			sourceTree = "<group>";
+		};
+		04B805472138DD45003465E0 /* TDCacheObject */ = {
+			isa = PBXGroup;
+			children = (
+				04B805482138DD45003465E0 /* NSObject+TDAttribute.m */,
+				04B805492138DD45003465E0 /* TDPerformer.h */,
+				04B8054A2138DD45003465E0 /* TDOperator.m */,
+				04B8054B2138DD45003465E0 /* NSObject＋TDKeyValue.m */,
+				04B8054C2138DD45003465E0 /* NSObject+TDAttribute.h */,
+				04B8054D2138DD45003465E0 /* NSObject＋TDKeyValue.h */,
+				04B8054E2138DD45003465E0 /* TDOperator.h */,
+				04B8054F2138DD45003465E0 /* TDPerformer.m */,
+			);
+			path = TDCacheObject;
+			sourceTree = "<group>";
+		};
+		04B805512138DD45003465E0 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				04B805522138DD45003465E0 /* FMDatabase.h */,
+				04B805532138DD45003465E0 /* FMDatabaseQueue.m */,
+				04B805542138DD45003465E0 /* FMResultSet.h */,
+				04B805552138DD45003465E0 /* FMDatabasePool.h */,
+				04B805562138DD45003465E0 /* FMDatabaseAdditions.m */,
+				04B805572138DD45003465E0 /* FMDatabase.m */,
+				04B805582138DD45003465E0 /* FMDatabaseQueue.h */,
+				04B805592138DD45003465E0 /* FMDatabaseAdditions.h */,
+				04B8055A2138DD45003465E0 /* FMDatabasePool.m */,
+				04B8055B2138DD45003465E0 /* FMResultSet.m */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,11 +355,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B8055C2138DD45003465E0 /* NSObject+TDAttribute.m in Sources */,
 				04B8053F2138D453003465E0 /* SecondViewController.m in Sources */,
 				04B8050D2138CEBC003465E0 /* ViewController.m in Sources */,
+				04B805622138DD45003465E0 /* FMDatabase.m in Sources */,
 				04B805422138D47A003465E0 /* ThirdViewController.m in Sources */,
+				04B8055D2138DD45003465E0 /* TDOperator.m in Sources */,
+				04B805642138DD45003465E0 /* FMResultSet.m in Sources */,
+				04B805602138DD45003465E0 /* FMDatabaseQueue.m in Sources */,
+				04B805632138DD45003465E0 /* FMDatabasePool.m in Sources */,
+				04B8055E2138DD45003465E0 /* NSObject＋TDKeyValue.m in Sources */,
 				04B805182138CEBE003465E0 /* main.m in Sources */,
+				04B805612138DD45003465E0 /* FMDatabaseAdditions.m in Sources */,
 				04B8050A2138CEBC003465E0 /* AppDelegate.m in Sources */,
+				04B8055F2138DD45003465E0 /* TDPerformer.m in Sources */,
 				04B805452138D490003465E0 /* FourthViewController.m in Sources */,
 				04B8053C2138D437003465E0 /* FirstViewController.m in Sources */,
 			);
@@ -458,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/3132helper/PrefixHeader.pch";
 				INFOPLIST_FILE = 3132helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/3132helper/PrefixHeader.pch";
 				INFOPLIST_FILE = 3132helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
