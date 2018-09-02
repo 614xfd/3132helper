@@ -289,13 +289,16 @@
     NSArray *arr = [self findWithSql:sqlCmd];
     
     [self setAttributes:[arr firstObject]];
+    
+    
+    
     return YES;
 }
 
 //根据一对键值查找数据
 - (NSArray *)findOneWithValue:(NSString *)value forKey:(NSString *)key{
     
-    NSString *sqlCmd = [NSString stringWithFormat:@"select * from %@ where 1 = 1 and %@ like '%@'  limit   1",self.tableName,key,value];
+    NSString *sqlCmd = [NSString stringWithFormat:@"select * from %@ where 1 = 1 and %@ like '%@'  limit   1000",self.tableName,key,value];
     NSArray *arr = [self findWithSql:sqlCmd];
     NSArray *dataArr;
     if (self.obj) {

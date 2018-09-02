@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0452146D213910A8005637CA /* FirstInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452146C213910A8005637CA /* FirstInfoViewController.m */; };
+		045214702139120E005637CA /* FirstObjct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452146F2139120E005637CA /* FirstObjct.m */; };
+		04B59D43213B9D3D0034A32F /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B59D42213B9D3C0034A32F /* LocalAuthentication.framework */; };
 		04B8050A2138CEBC003465E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805092138CEBC003465E0 /* AppDelegate.m */; };
 		04B8050D2138CEBC003465E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8050C2138CEBC003465E0 /* ViewController.m */; };
 		04B805102138CEBC003465E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B8050E2138CEBC003465E0 /* Main.storyboard */; };
@@ -84,6 +87,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0452146B213910A8005637CA /* FirstInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstInfoViewController.h; sourceTree = "<group>"; };
+		0452146C213910A8005637CA /* FirstInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstInfoViewController.m; sourceTree = "<group>"; };
+		0452146E2139120E005637CA /* FirstObjct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstObjct.h; sourceTree = "<group>"; };
+		0452146F2139120E005637CA /* FirstObjct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstObjct.m; sourceTree = "<group>"; };
+		04B59D42213B9D3C0034A32F /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		04B805052138CEBC003465E0 /* 3132helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3132helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B805082138CEBC003465E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04B805092138CEBC003465E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -190,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B59D43213B9D3D0034A32F /* LocalAuthentication.framework in Frameworks */,
 				04B805A42138E112003465E0 /* libresolv.tbd in Frameworks */,
 				04B805AC2138E130003465E0 /* UserNotifications.framework in Frameworks */,
 				04B805A62138E11A003465E0 /* libz.tbd in Frameworks */,
@@ -230,6 +239,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0452146521391070005637CA /* First */ = {
+			isa = PBXGroup;
+			children = (
+				0452146B213910A8005637CA /* FirstInfoViewController.h */,
+				0452146C213910A8005637CA /* FirstInfoViewController.m */,
+				0452146E2139120E005637CA /* FirstObjct.h */,
+				0452146F2139120E005637CA /* FirstObjct.m */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
 		04B804FC2138CEBC003465E0 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +284,7 @@
 				04B8050C2138CEBC003465E0 /* ViewController.m */,
 				04B8053A2138D437003465E0 /* FirstViewController.h */,
 				04B8053B2138D437003465E0 /* FirstViewController.m */,
+				0452146521391070005637CA /* First */,
 				04B8053D2138D453003465E0 /* SecondViewController.h */,
 				04B8053E2138D453003465E0 /* SecondViewController.m */,
 				04B805402138D47A003465E0 /* ThirdViewController.h */,
@@ -433,6 +454,7 @@
 		04B805A22138E111003465E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04B59D42213B9D3C0034A32F /* LocalAuthentication.framework */,
 				04B805C52138ECD5003465E0 /* UIKit.framework */,
 				04B805C32138ECCE003465E0 /* Foundation.framework */,
 				04B805BD2138E1B4003465E0 /* SystemConfiguration.framework */,
@@ -608,6 +630,7 @@
 				04B8050D2138CEBC003465E0 /* ViewController.m in Sources */,
 				04B8059F2138E057003465E0 /* IQUIViewController+Additions.m in Sources */,
 				04B805622138DD45003465E0 /* FMDatabase.m in Sources */,
+				0452146D213910A8005637CA /* FirstInfoViewController.m in Sources */,
 				04B805422138D47A003465E0 /* ThirdViewController.m in Sources */,
 				04B805952138E057003465E0 /* IQBarButtonItem.m in Sources */,
 				04B805932138E057003465E0 /* IQToolbar.m in Sources */,
@@ -623,6 +646,7 @@
 				04B805632138DD45003465E0 /* FMDatabasePool.m in Sources */,
 				04B8059B2138E057003465E0 /* IQUIWindow+Hierarchy.m in Sources */,
 				04B8059E2138E057003465E0 /* IQUIView+Hierarchy.m in Sources */,
+				045214702139120E005637CA /* FirstObjct.m in Sources */,
 				04B8055E2138DD45003465E0 /* NSObject＋TDKeyValue.m in Sources */,
 				04B805182138CEBE003465E0 /* main.m in Sources */,
 				04B805612138DD45003465E0 /* FMDatabaseAdditions.m in Sources */,
@@ -810,7 +834,7 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
 				INFOPLIST_FILE = 3132helper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -847,7 +871,7 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
 				INFOPLIST_FILE = 3132helper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

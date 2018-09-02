@@ -138,4 +138,43 @@
 - (void) setAttributes:(NSDictionary *)dataDic{
     [self setAttributes:dataDic obj:self];
 }
+
+
+
+- (NSString *)getJson:(id)data{
+    NSError *error = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data
+                                                       options:kNilOptions
+                                                         error:&error];
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData
+                                                 encoding:NSUTF8StringEncoding];
+    return jsonString;
+}
+- (NSArray *)stringToJSON:(NSString *)jsonStr {
+    if (jsonStr) {
+        id tmp = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments | NSJSONReadingMutableLeaves | NSJSONReadingMutableContainers error:nil];
+        
+        if (tmp) {
+            if ([tmp isKindOfClass:[NSArray class]]) {
+                
+                return tmp;
+                
+            } else if([tmp isKindOfClass:[NSString class]]
+                      || [tmp isKindOfClass:[NSDictionary class]]) {
+                
+                return [NSArray arrayWithObject:tmp];
+                
+            } else {
+                return nil;
+            }
+        } else {
+            return nil;
+        }
+        
+    } else {
+        return nil;
+    }
+}
 @end

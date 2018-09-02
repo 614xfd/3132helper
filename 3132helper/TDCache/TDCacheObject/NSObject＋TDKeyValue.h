@@ -23,4 +23,9 @@
  通过nsdictiongary 给model赋值
  */
 - (void) setAttributes:(NSDictionary *)dataDic;
+
+
+
+- (NSString *)getJson:(id)data;
+- (NSArray *)stringToJSON:(NSString *)jsonStr;
 @end
