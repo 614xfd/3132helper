@@ -10,6 +10,8 @@
 		0452146D213910A8005637CA /* FirstInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452146C213910A8005637CA /* FirstInfoViewController.m */; };
 		045214702139120E005637CA /* FirstObjct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452146F2139120E005637CA /* FirstObjct.m */; };
 		04B59D43213B9D3D0034A32F /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B59D42213B9D3C0034A32F /* LocalAuthentication.framework */; };
+		04B59D48213CD80B0034A32F /* jcore-ios-1.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B59D45213CD80B0034A32F /* jcore-ios-1.2.2.a */; };
+		04B59D49213CD80B0034A32F /* jpush-ios-3.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B59D46213CD80B0034A32F /* jpush-ios-3.1.0.a */; };
 		04B8050A2138CEBC003465E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805092138CEBC003465E0 /* AppDelegate.m */; };
 		04B8050D2138CEBC003465E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8050C2138CEBC003465E0 /* ViewController.m */; };
 		04B805102138CEBC003465E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B8050E2138CEBC003465E0 /* Main.storyboard */; };
@@ -65,8 +67,6 @@
 		04B805C22138E410003465E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B805C02138E410003465E0 /* LaunchScreen.storyboard */; };
 		04B805C42138ECCE003465E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B805C32138ECCE003465E0 /* Foundation.framework */; };
 		04B805C62138ECD5003465E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B805C52138ECD5003465E0 /* UIKit.framework */; };
-		04B805D72138F385003465E0 /* jcore-ios-1.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B805D42138F385003465E0 /* jcore-ios-1.2.2.a */; };
-		04B805D82138F385003465E0 /* jpush-ios-3.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B805D52138F385003465E0 /* jpush-ios-3.1.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,9 @@
 		0452146E2139120E005637CA /* FirstObjct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstObjct.h; sourceTree = "<group>"; };
 		0452146F2139120E005637CA /* FirstObjct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstObjct.m; sourceTree = "<group>"; };
 		04B59D42213B9D3C0034A32F /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		04B59D45213CD80B0034A32F /* jcore-ios-1.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.2.2.a"; sourceTree = "<group>"; };
+		04B59D46213CD80B0034A32F /* jpush-ios-3.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.1.0.a"; sourceTree = "<group>"; };
+		04B59D47213CD80B0034A32F /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		04B805052138CEBC003465E0 /* 3132helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3132helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B805082138CEBC003465E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04B805092138CEBC003465E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -188,9 +191,6 @@
 		04B805C12138E410003465E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B805C32138ECCE003465E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04B805C52138ECD5003465E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		04B805D32138F385003465E0 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
-		04B805D42138F385003465E0 /* jcore-ios-1.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.2.2.a"; sourceTree = "<group>"; };
-		04B805D52138F385003465E0 /* jpush-ios-3.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.1.0.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,12 +203,12 @@
 				04B805AC2138E130003465E0 /* UserNotifications.framework in Frameworks */,
 				04B805A62138E11A003465E0 /* libz.tbd in Frameworks */,
 				04B805B82138E184003465E0 /* Security.framework in Frameworks */,
+				04B59D48213CD80B0034A32F /* jcore-ios-1.2.2.a in Frameworks */,
 				04B805C62138ECD5003465E0 /* UIKit.framework in Frameworks */,
-				04B805D72138F385003465E0 /* jcore-ios-1.2.2.a in Frameworks */,
 				04B805C42138ECCE003465E0 /* Foundation.framework in Frameworks */,
 				04B805BC2138E1AB003465E0 /* CoreGraphics.framework in Frameworks */,
+				04B59D49213CD80B0034A32F /* jpush-ios-3.1.0.a in Frameworks */,
 				04B805BE2138E1B4003465E0 /* SystemConfiguration.framework in Frameworks */,
-				04B805D82138F385003465E0 /* jpush-ios-3.1.0.a in Frameworks */,
 				04B805B62138E151003465E0 /* CoreTelephony.framework in Frameworks */,
 				04B805AE2138E136003465E0 /* CoreFoundation.framework in Frameworks */,
 				04B805BA2138E1A4003465E0 /* CFNetwork.framework in Frameworks */,
@@ -250,6 +250,16 @@
 			path = First;
 			sourceTree = "<group>";
 		};
+		04B59D44213CD7E80034A32F /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				04B59D45213CD80B0034A32F /* jcore-ios-1.2.2.a */,
+				04B59D46213CD80B0034A32F /* jpush-ios-3.1.0.a */,
+				04B59D47213CD80B0034A32F /* JPUSHService.h */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		04B804FC2138CEBC003465E0 = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +284,7 @@
 		04B805072138CEBC003465E0 /* 3132helper */ = {
 			isa = PBXGroup;
 			children = (
-				04B805D02138F385003465E0 /* Lib */,
+				04B59D44213CD7E80034A32F /* Lib */,
 				04B805BF2138E1F4003465E0 /* 3132helper.entitlements */,
 				04B805662138E048003465E0 /* SDK */,
 				04B805462138DD45003465E0 /* TDCache */,
@@ -473,17 +483,6 @@
 				04B805A32138E112003465E0 /* libresolv.tbd */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		04B805D02138F385003465E0 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				04B805D32138F385003465E0 /* JPUSHService.h */,
-				04B805D42138F385003465E0 /* jcore-ios-1.2.2.a */,
-				04B805D52138F385003465E0 /* jpush-ios-3.1.0.a */,
-			);
-			name = Lib;
-			path = "../../../../../Downloads/jpush-ios-3.1.0-release/Lib";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -843,6 +842,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/3132helper/SDK",
 					"\"$(SRCROOT)/3132helper/Lib\"",
+					"$(PROJECT_DIR)/3132helper/Lib",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -880,6 +880,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/3132helper/SDK",
 					"\"$(SRCROOT)/3132helper/Lib\"",
+					"$(PROJECT_DIR)/3132helper/Lib",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
