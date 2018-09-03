@@ -46,7 +46,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    if (@available(iOS 11.0, *)) {
+        [self.tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     self.title = @"汇率";
     self.dataArray = [NSMutableArray array];
     _select = 0;
@@ -55,7 +59,7 @@
 
 - (void) requestCountry
 {
-//    __weak __typeof(&*self)weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
 //    NSDictionary *d = [NSDictionary dictionary];
 //    [[HttpTool alloc] POSTWithSystemParameters:[HttpTool spWithApi:@"API.Tools.ExChangeCountrysListGet" andSign:[HttpTool signWithMainParameters:d]] andMainParameters:d completed:^(id JSON, NSString *stringData) {
 //
@@ -69,11 +73,25 @@
 //    } failed:^(NSError *error) {
 //
 //    }];
+   
+    [[NetworkTool sharedTool] requestWithURLString:@"http://op.juhe.cn/onebox/exchange/query?key=c90d62bfd3f5f4a91cbfdd32997b3390" parameters:nil method:@"GET" completed:^(id JSON, NSString *stringData) {
+        
+        NSLog(@"%@      ------------- %@", stringData, JSON );
+        NSString *code = [NSString stringWithFormat:@"%@", [JSON objectForKey:@"error_code"]];
+        if ([code isEqualToString:@"0"]) {
+            //            weakSelf.dataArray = [[JSON objectForKey:@"WeatherInfo"] objectForKey:@"WeatherPredictions"];
+            [weakSelf performSelectorOnMainThread:@selector(creatView:) withObject:JSON waitUntilDone:YES];
+        } else {
+        }
+    } failed:^(NSError *error) {
+        //        [weakSelf requestError];
+    }];
+    
 }
 
 - (void) creatView : (NSDictionary *)dic
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -87,21 +105,25 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgLabelTouch)];
     [_bgView addGestureRecognizer:tap];
-    
+    NSArray *array = [[dic objectForKey:@"result"] objectForKey:@"list"];
+//    NSMutableArray *mArray = [NSMutableArray array];
+//    for (NSArray *arr in array) {
+//        [mArray addObject:[arr objectAtIndex:0]];
+//    }
     _erv = [[ExchangeRateView alloc] initWithFrame:CGRectMake(self.view.frame.size.width, 0, self.view.frame.size.width/3*2, self.view.frame.size.height)];
-    _erv.dataArray = [dic objectForKey:@"ExChangeCountrys"];
+//    _erv.dataArray = [[dic objectForKey:@"ExChangeCountrys"]];
+    _erv.dataArray = array;
     _erv.delegate = self;
     [self.view addSubview:_erv];
     [self.view bringSubviewToFront:_erv];
     
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"exchangerate_cityInfo"]) {
-        NSArray *array = [dic objectForKey:@"ExChangeCountrys"];
         for (int i = 0; i < array.count && i < 5; i++) {
             [self.dataArray addObject:[array objectAtIndex:i]];
         }
     } else {
         NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        NSArray *array = [dic objectForKey:@"ExChangeCountrys"];
+//        NSArray *a = [dic objectForKey:@"ExChangeCountrys"];
         NSMutableArray *arr = [NSMutableArray arrayWithArray:[ud objectForKey:@"exchangerate_cityInfo"]];
         for (int i = 0; i < array.count && self.dataArray.count < 6; i++) {
             NSString *CountryName= [[array objectAtIndex:i] objectForKey:@"CountryName"];
@@ -188,23 +210,26 @@
         bgView.backgroundColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1];
     }
     
-    NSString *str = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes( kCFAllocatorDefault, (CFStringRef)[NSString stringWithFormat:@"%@", [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"Logo"]], NULL, NULL,  kCFStringEncodingUTF8 ));
+//    NSString *str = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes( kCFAllocatorDefault, (CFStringRef)[NSString stringWithFormat:@"%@", [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"Logo"]], NULL, NULL,  kCFStringEncodingUTF8 ));
     
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, (view.frame.size.height-30)/2, 46, 30)];
-    [image sd_setImageWithURL:[NSURL URLWithString:str]];
-    [bgView addSubview:image];
-    [image.layer setMasksToBounds:YES];
-    [image.layer setCornerRadius:3];
+//    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(15, (view.frame.size.height-30)/2, 46, 30)];
+//    [image sd_setImageWithURL:[NSURL URLWithString:str]];
+//    [bgView addSubview:image];
+//    [image.layer setMasksToBounds:YES];
+//    [image.layer setCornerRadius:3];
     
-    BaseLabel *country = [[BaseLabel alloc] initWithFrame:CGRectMake(image.frame.origin.x+image.frame.size.width+10, image.frame.origin.y, 100, 18)];
+//    BaseLabel *country = [[BaseLabel alloc] initWithFrame:CGRectMake(image.frame.origin.x+image.frame.size.width+10, image.frame.origin.y, 100, 18)];
+    BaseLabel *country = [[BaseLabel alloc] initWithFrame:CGRectMake(15+10, (view.frame.size.height-30)/2, 100, 18)];
+
     //    country.font = [UIFont systemFontOfSize:16];
     [country setMYFont:18];
-    country.text = [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboNameEng"];
+//    country.text = [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboNameEng"];
+    country.text = [[self.dataArray objectAtIndex:indexPath.row] firstObject];
     country.textColor = [UIColor colorWithRed:78/255.0 green:78/255.0 blue:78/255.0 alpha:1];
     [bgView addSubview:country];
     
     BaseLabel *name = [[BaseLabel alloc] initWithFrame:CGRectMake(country.frame.origin.x, country.frame.origin.y+country.frame.size.height+4, country.frame.size.width, 10)];
-    name.text = [NSString stringWithFormat:@"%@", [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboName"]];
+//    name.text = [NSString stringWithFormat:@"%@", [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboName"]];
     //    name.font = [UIFont systemFontOfSize:10];
     [name setMYFont:10];
     name.textColor = [UIColor colorWithRed:183/255.0 green:183/255.0 blue:183/255.0 alpha:1];
@@ -242,7 +267,12 @@
             UITableViewCell *c = (UITableViewCell *)[self.tableView viewWithTag:_select+3000];
             UITextField *t = (UITextField *)[c viewWithTag:_select+2000];
             double d = [t.text doubleValue];
-            tf.text = [NSString stringWithFormat:@"%.3lf", d/[[[self.dataArray objectAtIndex:_select] objectForKey:@"Rebate"] doubleValue]*[[[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"Rebate"] doubleValue]];
+//            tf.text = [NSString stringWithFormat:@"%.3lf", d/[[[self.dataArray objectAtIndex:_select] objectForKey:@"Rebate"] doubleValue]*[[[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"Rebate"] doubleValue]];
+            double a = [[[self.dataArray objectAtIndex:_select] lastObject] doubleValue]/[[[self.dataArray objectAtIndex:_select] objectAtIndex:1] doubleValue];
+            double b = [[[self.dataArray objectAtIndex:indexPath.row] lastObject] doubleValue]/[[[self.dataArray objectAtIndex:indexPath.row] objectAtIndex:1] doubleValue];
+            tf.text = [NSString stringWithFormat:@"%.3lf", d*a/b];
+
+            
             tf.textColor = [UIColor colorWithRed:138/255.0 green:138/255.0 blue:138/255.0 alpha:1];
         }
     }
@@ -333,10 +363,10 @@
     view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
-- (void) returnDictionary:(NSDictionary *)dic andIndex:(NSInteger)x
+- (void) returnDictionary:(NSArray *)array andIndex:(NSInteger)x
 {
     [self hiddenView];
-    [self.dataArray replaceObjectAtIndex:x withObject:dic];
+    [self.dataArray replaceObjectAtIndex:x withObject:array];
     //    self.dataArray re
     [self.tableView reloadData];
     
@@ -430,7 +460,10 @@
         if (i != x) {
             UITableViewCell *cell = (UITableViewCell *)[self.tableView viewWithTag:i+3000];
             UITextField *tf = (UITextField *)[cell viewWithTag:i+2000];
-            tf.text = [NSString stringWithFormat:@"%.3lf", d/[[[self.dataArray objectAtIndex:x] objectForKey:@"Rebate"] doubleValue]*[[[self.dataArray objectAtIndex:i] objectForKey:@"Rebate"] doubleValue]];
+//            tf.text = [NSString stringWithFormat:@"%.3lf", d/[[[self.dataArray objectAtIndex:x] objectForKey:@"Rebate"] doubleValue]*[[[self.dataArray objectAtIndex:i] objectForKey:@"Rebate"] doubleValue]];
+            double a = [[[self.dataArray objectAtIndex:x] lastObject] doubleValue]/[[[self.dataArray objectAtIndex:x] objectAtIndex:1] doubleValue];
+            double b = [[[self.dataArray objectAtIndex:i] lastObject] doubleValue]/[[[self.dataArray objectAtIndex:i] objectAtIndex:1] doubleValue];
+            tf.text = [NSString stringWithFormat:@"%.3lf", d*a/b];
         }
     }
 }

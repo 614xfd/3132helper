@@ -77,13 +77,14 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, view.frame.size.width, view.frame.size.height)];
     label.font = [UIFont systemFontOfSize:14];
     label.textColor = [UIColor grayColor];
-    label.text = [NSString stringWithFormat:@"%@ %@", [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboName"], [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboNameEng"]];
+//    label.text = [NSString stringWithFormat:@"%@ %@", [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboName"], [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"SynboNameEng"]];
+    label.text = [[self.dataArray objectAtIndex:indexPath.row] objectAtIndex:0];
     [view addSubview:label];
     
     if (_nowArray.count) {
-        NSString *string = [[self.dataArray objectAtIndex:indexPath.row] objectForKey:@"CountryName"];
+        NSString *string = [[self.dataArray objectAtIndex:indexPath.row] objectAtIndex:0];
         for (int i = 0; i < _nowArray.count; i++) {
-            NSString *str = [[_nowArray objectAtIndex:i] objectForKey:@"CountryName"];
+            NSString *str = [[_nowArray objectAtIndex:i] objectAtIndex:0];
             if ([string isEqualToString:str]) {
                 UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width-10-100, 0, 100, view.frame.size.height)];
                 lab.text = @"已选";

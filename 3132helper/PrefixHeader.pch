@@ -12,6 +12,7 @@
 #import "TDCache.h"
 #import "NSObject+TDAttribute.h"
 #import "UIImageView+WebCache.h"
+#import "NetworkTool.h"
 
 
 

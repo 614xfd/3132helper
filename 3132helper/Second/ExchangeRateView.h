@@ -12,7 +12,7 @@
 
 @optional
 
-- (void) returnDictionary : (NSDictionary *)dic andIndex : (NSInteger)x;
+- (void) returnDictionary : (NSArray *)array andIndex : (NSInteger)x;
 
 @end
 
