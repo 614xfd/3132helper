@@ -32,7 +32,7 @@
                          ];
     for (int i = 0; i < titiles.count; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        btn.frame = CGRectMake(i % 2 == 0? (self.view.frame.size.width - 120 * 2) / 4.0:self.view.frame.size.width / 2.0 + (self.view.frame.size.width - 120 * 2) / 4.0, 140 + 160 * (i / 2), 120, 140);
+        btn.frame = CGRectMake(i % 2 == 0? (self.view.frame.size.width - 120 * 2) / 4.0:self.view.frame.size.width / 2.0 + (self.view.frame.size.width - 120 * 2) / 4.0, 100 + 160 * (i / 2), 120, 140);
 //        btn.backgroundColor = [UIColor lightGrayColor];
         btn.tag = 100 + i;
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
