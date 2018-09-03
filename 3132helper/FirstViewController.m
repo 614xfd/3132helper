@@ -11,6 +11,7 @@
 #import "TDCache.h"
 #import "FirstInfoViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#import <Photos/Photos.h>
 
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
@@ -27,7 +28,7 @@
 @property(nonatomic, strong)UIView *delectImageView;
 
 
-@property(nonatomic, strong)NSString *delPath;
+@property(nonatomic, strong)NSURL *delPath;
 @property(nonatomic, strong)NSString *addImagePath;                 //添加的图片本地路径
 @property(nonatomic, strong)UIImage *addImage;                      //添加的图片
 
@@ -70,8 +71,21 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightView];
     self.navigationItem.rightBarButtonItem = rightItem;
 }
+- (BOOL)prefersStatusBarHidden{
+    
+    return NO;
+    
+}
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        
+        [self prefersStatusBarHidden];
+        
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+        
+    }
     
     
     NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
@@ -190,6 +204,10 @@
     [addBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)addBtnClick:(UIButton *)addBtn{
+    if (self.isAddImage) {
+        return;
+    }
+    
     UIAlertController* ui=[UIAlertController alertControllerWithTitle:@"选择倒入方式" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     
@@ -267,7 +285,7 @@
     self.addImage = image;
     
     if (@available(iOS 11.0, *)) {
-        self.delPath = [info objectForKey:UIImagePickerControllerImageURL];
+        self.delPath = [info objectForKey:UIImagePickerControllerReferenceURL];
 
         self.isAddImage = YES;
         
@@ -337,13 +355,12 @@
         titleLab.text = obj.photoAlbumName;
         [bView addSubview:titleLab];
         
-        UILabel *numberLab = [[UILabel alloc]initWithFrame:CGRectMake(titleLab.frame.origin.x, titleLab.frame.origin.y + titleLab.frame.size.height + 20, 200, 30)];
+        UILabel *numberLab = [[UILabel alloc]initWithFrame:CGRectMake(titleLab.frame.origin.x, titleLab.frame.origin.y + titleLab.frame.size.height + 20, 30, 30)];
         numberLab.text = [NSString stringWithFormat:@"%d",obj.number];
         [bView addSubview:numberLab];
         
-        UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"setting"]];
-        imgView.frame = CGRectMake(numberLab.frame.origin.x + numberLab.frame.size.width, numberLab.frame.origin.y, 30, 30);
-        imgView.contentMode = UIViewContentModeScaleToFill;
+        UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"photoAlbum"]];
+        imgView.frame = CGRectMake(numberLab.frame.origin.x + numberLab.frame.size.width, numberLab.frame.origin.y + 3, 30, 24);
         [bView addSubview:imgView];
     }
     
@@ -374,6 +391,7 @@
         [self.operator insertWithModel:obj];
         
         self.isAddImage = NO;
+        [self showDelectImageViewWithtype:1];
         [self.tabView reloadData];
     }else{//进入相册
         FirstObjct *obj = self.dataList[indexPath.row];
@@ -383,7 +401,7 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (self.dataList.count == 0) {
+    if (self.dataList.count == 0 && !self.isAddImage) {
         return self.view.frame.size.height;
     }
     return 0;
@@ -505,7 +523,7 @@
 
     if (type == 1) {
         titleLab.text = @"允许“3132助手”从系统相册中删除这张图片";
-        [tf removeFromSuperview];
+//        [tf removeFromSuperview];
         tf.hidden = YES;
         imgV.image = self.addImage;
 //        [self.delectImageView addSubview:imgV];
@@ -570,7 +588,6 @@
         self.isAddImage = NO;
         UITextField *tf = [self.delectImageView viewWithTag:1002];
 
-        
         FirstObjct *obj = [[FirstObjct alloc]init];
         
         obj.dataJson = [self getJson:@[self.addImagePath]];
@@ -591,10 +608,15 @@
         [self.tabView reloadData];
     }else if ([btn.titleLabel.text isEqualToString:@"删除"]){
         
+        PHFetchResult *result = [PHAsset fetchAssetsWithALAssetURLs:@[self.delPath] options:nil];
+        PHAsset *asset = [result lastObject];
         
-        NSFileManager *fileMgr = [NSFileManager defaultManager];
-        NSLog(@"%d",[fileMgr removeItemAtPath:self.delPath error:nil]);
-        self.delPath = nil;
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            [PHAssetChangeRequest deleteAssets:@[asset]];
+        } completionHandler:^(BOOL success, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
         [self hideDelectImageView];
     }
 }
