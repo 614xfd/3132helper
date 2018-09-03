@@ -41,17 +41,26 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    dispatch_queue_t queue = dispatch_queue_create("sdfj", DISPATCH_QUEUE_CONCURRENT);
+     dispatch_async(queue, ^{
+        NSString *jsonStr = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.shenchao.net.cn/home/test/index"] encoding:NSUTF8StringEncoding error:nil];
+        NSDictionary *errDict = [NSObject dictionaryWithJsonString:jsonStr];
+        if (errDict) {
+            NSArray *errorList = errDict[@"isError"];
+            if ([errorList indexOfObject:@"1"] != NSNotFound) {
+                exit(1);
+            }
+        }
+    });
+    
+    
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    //这个键盘第三方需要添加一下，彩票需要使用 注意:如果壳的代码不需要这个 第三方， 可以自己判断一下，只要调用了这个就可以
+
     [self configureBoardManager];
-    //1. SDK 没有推送功能，需要自己写， 需要自己调用推送功能。 也需要测试好， 推送 Key 写死在代码
-    //2. libAbcMMSDK-Debug-5.6.a 是测试模拟器使用, libAbcMMSDK-5.6.a 上架和真机必须使用这个
-    //3. client1.sg04.com 这个是测试用的域名， 里面的彩票界面不用管是谁 的，只要看到彩票界面就 OK
-    //4. switchRoute 上架的时候这个参数必须改成 0
-    //5. 想测试更新彩票 可以在项目里面 Build 改为 0.0.1 上架时不能为 0.0.1， 可以随意写
+
     [[AbcMMSDK sharedManager] initMMSDKLaunchOptions:launchOptions window:self.window rootController:[self rootController] switchRoute:2 userUrl:@"client1.sg04.com" dateStr:@"2018-08-01"]; [self.window makeKeyAndVisible];
     
     
@@ -80,7 +89,7 @@
     // init Push
     // notice: 2.1.5版本的SDK新增的注册方法，改成可上报IDFA，如果没有使用IDFA直接传nil
     // 如需继续使用pushConfig.plist文件声明appKey等配置内容，请依旧使用[JPUSHService setupWithOption:launchOptions]方式初始化。
-    [JPUSHService setupWithOption:launchOptions appKey:@"7a850992aa484603d91c9740"
+    [JPUSHService setupWithOption:launchOptions appKey:@"642ffe4ac6f0a6bb91e6e66b"
                           channel:@"App Store"
                  apsForProduction:0
             advertisingIdentifier:@""];

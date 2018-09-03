@@ -25,8 +25,8 @@
 - (void)creatMainBtn{
     
     NSArray *titiles = @[@{@"title":@"安全相册",@"img":@"helper01"},
-                         @{@"title":@"安全相册",@"img":@"helper02"},
-                         @{@"title":@"安全相册",@"img":@"helper04"},
+                         @{@"title":@"汇率",@"img":@"helper02"},
+                         @{@"title":@"天气",@"img":@"helper04"},
                          @{@"title":@"号码归属地",@"img":@"helper03"},
                          @{@"title":@"快递查询",@"img":@"helper05"}
                          ];

@@ -70,8 +70,21 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightView];
     self.navigationItem.rightBarButtonItem = rightItem;
 }
+- (BOOL)prefersStatusBarHidden{
+    
+    return NO;
+    
+}
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        
+        [self prefersStatusBarHidden];
+        
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+        
+    }
     
     
     NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
@@ -190,6 +203,10 @@
     [addBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)addBtnClick:(UIButton *)addBtn{
+    if (self.isAddImage) {
+        return;
+    }
+    
     UIAlertController* ui=[UIAlertController alertControllerWithTitle:@"选择倒入方式" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     
@@ -337,13 +354,14 @@
         titleLab.text = obj.photoAlbumName;
         [bView addSubview:titleLab];
         
-        UILabel *numberLab = [[UILabel alloc]initWithFrame:CGRectMake(titleLab.frame.origin.x, titleLab.frame.origin.y + titleLab.frame.size.height + 20, 200, 30)];
+        UILabel *numberLab = [[UILabel alloc]initWithFrame:CGRectMake(titleLab.frame.origin.x, titleLab.frame.origin.y + titleLab.frame.size.height + 20, 30, 30)];
         numberLab.text = [NSString stringWithFormat:@"%d",obj.number];
         [bView addSubview:numberLab];
         
-        UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"setting"]];
-        imgView.frame = CGRectMake(numberLab.frame.origin.x + numberLab.frame.size.width, numberLab.frame.origin.y, 30, 30);
-        imgView.contentMode = UIViewContentModeScaleToFill;
+        UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"photoAlbum"]];
+        imgView.frame = CGRectMake(numberLab.frame.origin.x + numberLab.frame.size.width, numberLab.frame.origin.y + 3, 30, 24);
+//        imgView.backgroundColor = [UIColor redColor];
+//        imgView.contentMode = UIViewContentModeScaleToFill;
         [bView addSubview:imgView];
     }
     
@@ -383,7 +401,7 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (self.dataList.count == 0) {
+    if (self.dataList.count == 0 && !self.isAddImage) {
         return self.view.frame.size.height;
     }
     return 0;
@@ -505,7 +523,7 @@
 
     if (type == 1) {
         titleLab.text = @"允许“3132助手”从系统相册中删除这张图片";
-        [tf removeFromSuperview];
+//        [tf removeFromSuperview];
         tf.hidden = YES;
         imgV.image = self.addImage;
 //        [self.delectImageView addSubview:imgV];

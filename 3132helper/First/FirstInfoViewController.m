@@ -50,7 +50,7 @@
             }
         }
     }else{
-        [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+        [rightBtn setTitle:@"删除" forState:UIControlStateNormal];
         self.isEdit = YES;
     }
     
