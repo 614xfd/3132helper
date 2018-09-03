@@ -26,11 +26,12 @@
     
     NSArray *titiles = @[@{@"title":@"安全相册",@"img":@"helper01"},
                          @{@"title":@"安全相册",@"img":@"helper02"},
-                         @{@"title":@"安全相册",@"img":@"helper03"},
-                         @{@"title":@"安全相册",@"img":@"helper04"},];
+                         @{@"title":@"安全相册",@"img":@"helper04"},
+                         @{@"title":@"号码归属地",@"img":@"helper03"}
+                         ];
     for (int i = 0; i < 4; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        btn.frame = CGRectMake(i % 2 == 0? 50:self.view.frame.size.width / 2.0 + 50, 140 + 160 * (i / 2), 120, 140);
+        btn.frame = CGRectMake(i % 2 == 0? (self.view.frame.size.width - 120 * 2) / 4.0:self.view.frame.size.width / 2.0 + (self.view.frame.size.width - 120 * 2) / 4.0, 140 + 160 * (i / 2), 120, 140);
 //        btn.backgroundColor = [UIColor lightGrayColor];
         btn.tag = 100 + i;
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
