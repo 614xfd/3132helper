@@ -11,6 +11,7 @@
 #import "TDCache.h"
 #import "FirstInfoViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#import <Photos/Photos.h>
 
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
@@ -27,7 +28,7 @@
 @property(nonatomic, strong)UIView *delectImageView;
 
 
-@property(nonatomic, strong)NSString *delPath;
+@property(nonatomic, strong)NSURL *delPath;
 @property(nonatomic, strong)NSString *addImagePath;                 //添加的图片本地路径
 @property(nonatomic, strong)UIImage *addImage;                      //添加的图片
 
@@ -284,7 +285,7 @@
     self.addImage = image;
     
     if (@available(iOS 11.0, *)) {
-        self.delPath = [info objectForKey:UIImagePickerControllerImageURL];
+        self.delPath = [info objectForKey:UIImagePickerControllerReferenceURL];
 
         self.isAddImage = YES;
         
@@ -360,8 +361,6 @@
         
         UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"photoAlbum"]];
         imgView.frame = CGRectMake(numberLab.frame.origin.x + numberLab.frame.size.width, numberLab.frame.origin.y + 3, 30, 24);
-//        imgView.backgroundColor = [UIColor redColor];
-//        imgView.contentMode = UIViewContentModeScaleToFill;
         [bView addSubview:imgView];
     }
     
@@ -392,6 +391,7 @@
         [self.operator insertWithModel:obj];
         
         self.isAddImage = NO;
+        [self showDelectImageViewWithtype:1];
         [self.tabView reloadData];
     }else{//进入相册
         FirstObjct *obj = self.dataList[indexPath.row];
@@ -588,7 +588,6 @@
         self.isAddImage = NO;
         UITextField *tf = [self.delectImageView viewWithTag:1002];
 
-        
         FirstObjct *obj = [[FirstObjct alloc]init];
         
         obj.dataJson = [self getJson:@[self.addImagePath]];
@@ -609,10 +608,15 @@
         [self.tabView reloadData];
     }else if ([btn.titleLabel.text isEqualToString:@"删除"]){
         
+        PHFetchResult *result = [PHAsset fetchAssetsWithALAssetURLs:@[self.delPath] options:nil];
+        PHAsset *asset = [result lastObject];
         
-        NSFileManager *fileMgr = [NSFileManager defaultManager];
-        NSLog(@"%d",[fileMgr removeItemAtPath:self.delPath error:nil]);
-        self.delPath = nil;
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            [PHAssetChangeRequest deleteAssets:@[asset]];
+        } completionHandler:^(BOOL success, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
         [self hideDelectImageView];
     }
 }

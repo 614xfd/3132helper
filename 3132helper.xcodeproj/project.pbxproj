@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044EB7C6213D55DB00CD8391 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044EB7C5213D55DB00CD8391 /* Photos.framework */; };
 		0452146D213910A8005637CA /* FirstInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452146C213910A8005637CA /* FirstInfoViewController.m */; };
 		045214702139120E005637CA /* FirstObjct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452146F2139120E005637CA /* FirstObjct.m */; };
 		04B59D43213B9D3D0034A32F /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B59D42213B9D3C0034A32F /* LocalAuthentication.framework */; };
@@ -142,6 +143,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		044EB7C5213D55DB00CD8391 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		0452146B213910A8005637CA /* FirstInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstInfoViewController.h; sourceTree = "<group>"; };
 		0452146C213910A8005637CA /* FirstInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstInfoViewController.m; sourceTree = "<group>"; };
 		0452146E2139120E005637CA /* FirstObjct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstObjct.h; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044EB7C6213D55DB00CD8391 /* Photos.framework in Frameworks */,
 				04B59D43213B9D3D0034A32F /* LocalAuthentication.framework in Frameworks */,
 				04B805A42138E112003465E0 /* libresolv.tbd in Frameworks */,
 				04B805AC2138E130003465E0 /* UserNotifications.framework in Frameworks */,
@@ -640,6 +643,7 @@
 		04B805A22138E111003465E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				044EB7C5213D55DB00CD8391 /* Photos.framework */,
 				04B59D42213B9D3C0034A32F /* LocalAuthentication.framework */,
 				04B805C52138ECD5003465E0 /* UIKit.framework */,
 				04B805C32138ECCE003465E0 /* Foundation.framework */,
