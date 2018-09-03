@@ -28,4 +28,6 @@
 
 - (NSString *)getJson:(id)data;
 - (NSArray *)stringToJSON:(NSString *)jsonStr;
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+-(NSString *)base64String:(NSString *)str;
 @end
