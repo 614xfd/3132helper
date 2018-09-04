@@ -53,7 +53,6 @@
 		04B8059E2138E057003465E0 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B805872138E056003465E0 /* IQUIView+Hierarchy.m */; };
 		04B8059F2138E057003465E0 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8058C2138E056003465E0 /* IQUIViewController+Additions.m */; };
 		04B805A02138E057003465E0 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B8058E2138E056003465E0 /* IQKeyboardReturnKeyHandler.m */; };
-		04B805A12138E057003465E0 /* libAbcMMSDK-Debug-5.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B8058F2138E057003465E0 /* libAbcMMSDK-Debug-5.6.a */; };
 		04B805A42138E112003465E0 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B805A32138E112003465E0 /* libresolv.tbd */; };
 		04B805A62138E11A003465E0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B805A52138E11A003465E0 /* libz.tbd */; };
 		04B805A82138E121003465E0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B805A72138E121003465E0 /* libc++.tbd */; };
@@ -240,7 +239,6 @@
 		04B8058C2138E056003465E0 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
 		04B8058D2138E056003465E0 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
 		04B8058E2138E056003465E0 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
-		04B8058F2138E057003465E0 /* libAbcMMSDK-Debug-5.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAbcMMSDK-Debug-5.6.a"; sourceTree = "<group>"; };
 		04B805A32138E112003465E0 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		04B805A52138E11A003465E0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		04B805A72138E121003465E0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -403,7 +401,6 @@
 				04B805AA2138E128003465E0 /* libsqlite3.0.tbd in Frameworks */,
 				04B805A82138E121003465E0 /* libc++.tbd in Frameworks */,
 				04B805912138E057003465E0 /* libAbcMMSDK-5.6.a in Frameworks */,
-				04B805A12138E057003465E0 /* libAbcMMSDK-Debug-5.6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +569,6 @@
 				04B805682138E055003465E0 /* AbcMMSDK.h */,
 				04B8056A2138E056003465E0 /* IQKeyboardManager */,
 				04B805692138E056003465E0 /* libAbcMMSDK-5.6.a */,
-				04B8058F2138E057003465E0 /* libAbcMMSDK-Debug-5.6.a */,
 				04B805672138E055003465E0 /* main.jsbundle */,
 			);
 			path = SDK;
@@ -1288,6 +1284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = 3132helper/3132helper.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZJMBSB9WS;
 				ENABLE_BITCODE = NO;
@@ -1316,7 +1313,8 @@
 				PODS_ROOT = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.helper.xfd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/3132helper/Lib\"";
 			};
 			name = Debug;
@@ -1327,6 +1325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = 3132helper/3132helper.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZJMBSB9WS;
 				ENABLE_BITCODE = NO;
@@ -1355,7 +1354,8 @@
 				PODS_ROOT = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.helper.xfd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/3132helper/Lib\"";
 			};
 			name = Release;

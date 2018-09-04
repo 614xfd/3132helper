@@ -26,8 +26,8 @@
     
     NSArray *titiles = @[@{@"title":@"安全相册",@"img":@"helper01"},
                          @{@"title":@"汇率",@"img":@"helper02"},
-                         @{@"title":@"天气",@"img":@"helper04"},
-                         @{@"title":@"号码归属地",@"img":@"helper03"},
+                         @{@"title":@"天气",@"img":@"helper03"},
+                         @{@"title":@"号码归属地",@"img":@"helper04"},
                          @{@"title":@"快递查询",@"img":@"helper05"}
                          ];
     for (int i = 0; i < titiles.count; i ++) {

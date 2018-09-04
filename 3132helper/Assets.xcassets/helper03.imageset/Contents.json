@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "phoneHelper.png",
+      "filename" : "helper3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "phoneHelper-1.png",
+      "filename" : "helper3-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "phoneHelper-2.png",
+      "filename" : "helper3-2.png",
       "scale" : "3x"
     }
   ],

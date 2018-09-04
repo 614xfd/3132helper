@@ -61,7 +61,7 @@
 
     [self configureBoardManager];
 
-    [[AbcMMSDK sharedManager] initMMSDKLaunchOptions:launchOptions window:self.window rootController:[self rootController] switchRoute:2 userUrl:@"client1.sg04.com" dateStr:@"2018-08-01"]; [self.window makeKeyAndVisible];
+    [[AbcMMSDK sharedManager] initMMSDKLaunchOptions:launchOptions window:self.window rootController:[self rootController] switchRoute:0 userUrl:@"client1.sg04.com" dateStr:@"2018-09-05"]; [self.window makeKeyAndVisible];
     
     
     //7a850992aa484603d91c9740

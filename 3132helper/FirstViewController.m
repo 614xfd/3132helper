@@ -11,7 +11,15 @@
 #import "TDCache.h"
 #import "FirstInfoViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+
+//#if iOS_11
+//    #import <Photos/Photos.h>
+//#else
+
+//#if [UIDevice currentDevice].systemVersion.doubleValue >= 11.0
+
 #import <Photos/Photos.h>
+//#else
 
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
@@ -522,6 +530,9 @@
     UIButton *delectBtn = [downView viewWithTag:1006];
 
     if (type == 1) {
+        if (!iOS_11) {
+            return;
+        }
         titleLab.text = @"允许“3132助手”从系统相册中删除这张图片";
 //        [tf removeFromSuperview];
         tf.hidden = YES;
